@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .icons {
+    @apply hidden h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
+  }
+  .rotate {
+    @apply transform rotate-45;
+  }
+  .bag {
+    @apply absolute -top-2 -right-1 text-white text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center;
+  }
+  .input {
+    @apply bg-gray-50 block w-full pl-10 sm:text-sm border-solid border border-gray-300 rounded-md focus:ring-gray-400 focus:border focus:border-gray-400;
+  }
+}
