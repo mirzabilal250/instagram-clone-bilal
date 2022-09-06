@@ -1,6 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import Link from "next/link";
+import { Formik, Form, Field } from "formik";
 
 const Login: NextPage = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -141,7 +142,7 @@ export default Login;
 
 import * as yup from "yup";
 
-const schema = yup.object().shape({
+const validation = yup.object().shape({
   email: yup.string().email().required(),
   password: yup.string().min(8).max(32).required(),
 });
