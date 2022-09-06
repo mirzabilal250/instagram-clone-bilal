@@ -22,10 +22,10 @@ export default function Stories() {
   }, []);
 
   return (
-    <div>
-      {user?.map((u, i) => {
-        return <Story key={i} avatar={u.image} username={u.username} />;
-      })}
+    <div className="flex space-x-2 p-6 mt-8 bg-white border rounded-sm border-gray-200 overflow-x-scroll scrollbar-thin scrollbar-thumb-white">
+      {user?.map((u, i) => (
+        <Story key={i} avatar={u.image} username={u.username} />
+      ))}
     </div>
   );
 }

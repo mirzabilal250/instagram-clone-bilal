@@ -5,8 +5,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        iphone: "url('/images/login/download.png')",
+      },
+    },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("tailwind-scrollbar"),
+    require("@tailwindcss/forms"),
+    require("tailwind-scrollbar-hide"),
+  ],
 };
-// require("@tailwindcss/forms")
