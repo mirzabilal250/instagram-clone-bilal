@@ -1,92 +1,161 @@
+import React from "react";
 import type { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
-// import Image from "next/image";
+import { Formik, Form, Field } from "formik";
+import * as yup from "yup";
 
-const Signup: NextPage = () => {
-  const onSubmithandler = (e: any) => {
-    e.preventDefault();
+interface formValues {
+  email: string;
+  password: string;
+}
+
+const Login: NextPage = () => {
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const onSubmit = (values: formValues) => {
+    //apollo logic here
+  };
+
+  const validation = yup.object().shape({
+    email: yup.string().email().required(),
+    password: yup.string().min(8).max(32).required(),
+  });
+
+  const initialValues: formValues = {
+    email: "",
+    password: "",
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Head>
-        <title>Instagram</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="container flex mx-auto max-w-screen-md items-center h-screen">
-        <div className="flex w-3/5">
-          <img
-            src="/images/iphone-with-profile.jpg"
-            alt="iPhone with Instagram app"
-          />
-        </div>
-        <div className="flex flex-col w-2/5">
-          <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
-            <h1 className="flex justify-center w-full">
+    <section className="bg-gray-50 h-screen">
+      <main className="flex flex-grow mb-4">
+        <article className="flex justify-center  flex-row mx-auto mt-8">
+          <div className="iamge-phone h-full hidden md:inline-flex flex-shrink-0">
+            <div className="mt-[27px] mr-0 mb-0 ml-[113px] relative">
               <img
-                src="/images/logo.png"
-                alt="Instagram"
-                className="mt-2 w-6/12 mb-4"
+                alt=""
+                className="hide-image fide-in"
+                src="/images/login/4.png"
               />
-            </h1>
-
-            {/* {error && <p className="mb-4 text-xs text-red-primary">{error}</p>} */}
-
-            <form onSubmit={(e) => onSubmithandler(e)}>
-              <input
-                aria-label="Enter your username"
-                type="text"
-                placeholder="Username"
-                className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
-                // onChange={({ target }) => setUsername(target.value)}
-                // value={username}
-              />
-              <input
-                aria-label="Enter your full name"
-                type="text"
-                placeholder="Full name"
-                className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
-                // onChange={({ target }) => setFullName(target.value)}
-                // value={fullName}
-              />
-              <input
-                aria-label="Enter your email address"
-                type="text"
-                placeholder="Email address"
-                className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
-                // onChange={({ target }) => setEmailAddress(target.value)}
-                // value={emailAddress}
-              />
-              <input
-                aria-label="Enter your password"
-                type="password"
-                placeholder="Password"
-                className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
-                // onChange={({ target }) => setPassword(target.value)}
-                // value={password}
-              />
-              <button
-                type="submit"
-                className={`bg-blue-500 text-white w-full rounded h-8 font-bold opacity-50`}
-              >
-                Sign Up
-              </button>
-            </form>
+            </div>
           </div>
-          <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary">
-            <p className="text-sm">
-              Have an account?{` `}
-              <Link href="/signup" className="font-bold text-blue-medium">
-                Login
-              </Link>
-            </p>
+          <div className="mx-auto min-w-[350px] mt-3">
+            <div className="flex flex-col items-center md:bg-white mb-[10px] py-[10px] border border-gray-200 rounded-sm">
+              <div className="mt-9 mb-3 flex">
+                <img
+                  src="/images/logo.png"
+                  className="object-cover w-44"
+                  alt="logo"
+                />
+              </div>
+              <div className="mb-[10px] w-full">
+                <Formik
+                  initialValues={initialValues}
+                  validationSchema={validation}
+                  onSubmit={async (values, { resetForm }) => {
+                    await onSubmit(values);
+                    resetForm();
+                  }}
+                >
+                  {({ errors, touched }) => (
+                    <Form className="flex flex-col mt-3">
+                      <Field
+                        name="email"
+                        type="email"
+                        className="login-input"
+                        placeholder="Email"
+                      />
+                      <Field
+                        name="password"
+                        type="password"
+                        className="login-input"
+                        placeholder="password"
+                      />
+                      <button
+                        type="submit"
+                        className={`insta-btn mx-8 mt-2 mb-2  ${
+                          !!errors.email ||
+                          !touched.email ||
+                          !touched.password ||
+                          !!errors.password ||
+                          loading
+                            ? "cursor-not-allowed"
+                            : "acive-btn"
+                        }`}
+                        disabled={!!errors.email || !!errors.password}
+                      >
+                        {loading ? "loading..." : "Sign Up"}
+                      </button>
+
+                      <div className="flex flex-row justify-center items-center mx-[40px] mt-[10px] mb-[18px]">
+                        <div className="flex-grow flex-shrink h-[1px] relative bg-gray-300"></div>
+                        <div className="text-gray-400 font-semibold mx-4">
+                          OR
+                        </div>
+                        <div className="flex-grow flex-shrink h-[1px] relative bg-gray-300"></div>
+                      </div>
+                      {/* sinUp with facebook */}
+                      <div className="flex  my-4 mx-[40px]">
+                        <a href="/facebooks" className="flex justify-between">
+                          <span className="mr-4">
+                            <svg
+                              className="w-6 h-6 text-blue-900 fill-current"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                          </span>
+                          <span className="text-blue-900 text-center">
+                            Continue with Facebook
+                          </span>
+                        </a>
+                      </div>
+                      <h3 className="text-center mt-3 text-sm text-blue-900">
+                        forget password
+                      </h3>
+                    </Form>
+                  )}
+                </Formik>
+              </div>
+            </div>
+            <div className="md:bg-white flex items-center justify-center border border-gray-200 rounded-sm mb-[10px] py-[10px]">
+              <div>
+                <p className="m-4 text-sm text-center">
+                  Vous n’avez pas de compte ?
+                  <Link href="/register">
+                    <span className="text-blue-500 font-semibold cursor-pointer">
+                      Inscrivez-vous
+                    </span>
+                  </Link>
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-sm text-center mx-[10px] my-[10px]">
+                Download Application{" "}
+              </p>
+              <div className="flex flex-row items-center justify-center my-[10px]">
+                <div className="mr-2">
+                  <img
+                    src="/images/login/appStore.png"
+                    className="h-[40px]"
+                    alt="appStore"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="/images/login/google.png"
+                    className="h-[40px]"
+                    alt="goole play"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </main>
+    </section>
   );
 };
 
-export default Signup;
+export default Login;

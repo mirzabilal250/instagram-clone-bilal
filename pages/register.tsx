@@ -5,22 +5,29 @@ import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 
 interface formValues {
+  fullName: string;
+  userName: string;
   email: string;
   password: string;
 }
 
-const Login: NextPage = () => {
+const Register: NextPage = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
   const onSubmit = (values: formValues) => {
     //apollo logic here
+    console.log(values);
   };
 
   const validation = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(8).max(32).required(),
+    fullName: yup.string().min(8).max(32).required(),
+    userName: yup.string().min(8).max(32).required(),
   });
 
   const initialValues: formValues = {
+    fullName: "",
+    userName: "",
     email: "",
     password: "",
   };
@@ -29,7 +36,7 @@ const Login: NextPage = () => {
     <section className="bg-gray-50 h-screen">
       <main className="flex flex-grow mb-4">
         <article className="flex justify-center  flex-row mx-auto mt-8">
-          <div className="iamge-phone hidden md:inline-flex flex-shrink-0">
+          <div className="iamge-phone hidden h-full md:inline-flex flex-shrink-0">
             <div className="mt-[27px] mr-0 mb-0 ml-[113px] relative">
               <img
                 alt=""
@@ -43,7 +50,7 @@ const Login: NextPage = () => {
               <div className="mt-9 mb-3 flex">
                 <img
                   src="/images/logo.png"
-                  className="object-cover"
+                  className="object-cover w-44"
                   alt="logo"
                 />
               </div>
@@ -59,10 +66,22 @@ const Login: NextPage = () => {
                   {({ errors, touched }) => (
                     <Form className="flex flex-col mt-3">
                       <Field
+                        name="fullName"
+                        type="text"
+                        className="login-input"
+                        placeholder="full name"
+                      />
+                      <Field
+                        name="userName"
+                        type="text"
+                        className="login-input"
+                        placeholder="username"
+                      />
+                      <Field
                         name="email"
                         type="email"
                         className="login-input"
-                        placeholder="Email"
+                        placeholder="email"
                       />
                       <Field
                         name="password"
@@ -74,16 +93,25 @@ const Login: NextPage = () => {
                         type="submit"
                         className={`insta-btn mx-8 mt-2 mb-2  ${
                           !!errors.email ||
+                          !!errors.fullName ||
+                          !touched.fullName ||
                           !touched.email ||
+                          !!errors.userName ||
+                          !touched.userName ||
                           !touched.password ||
                           !!errors.password ||
                           loading
                             ? "cursor-not-allowed"
                             : "acive-btn"
                         }`}
-                        disabled={!!errors.email || !!errors.password}
+                        disabled={
+                          !!errors.email ||
+                          !!errors.fullName ||
+                          !!errors.userName ||
+                          !!errors.password
+                        }
                       >
-                        {loading ? "loading..." : "Sign Up"}
+                        {loading ? "loading..." : "Sign In"}
                       </button>
 
                       <div className="flex flex-row justify-center items-center mx-[40px] mt-[10px] mb-[18px]">
@@ -121,17 +149,17 @@ const Login: NextPage = () => {
             <div className="md:bg-white flex items-center justify-center border border-gray-200 rounded-sm mb-[10px] py-[10px]">
               <div>
                 <p className="m-4 text-sm text-center">
-                  Vous n’avez pas de compte ?
-                  <Link href="/register">
+                  Vous avez un compte ?
+                  <Link href="/">
                     <span className="text-blue-500 font-semibold cursor-pointer">
-                      Inscrivez-vous
+                      Connectez-vous
                     </span>
                   </Link>
                 </p>
               </div>
             </div>
             <div className="flex flex-col">
-              <p className="text-sm text-center mx-[10px] my-[20px]">
+              <p className="text-sm text-center mx-[10px] my-[10px]">
                 Download Application{" "}
               </p>
               <div className="flex flex-row items-center justify-center my-[10px]">
@@ -158,4 +186,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Register;
