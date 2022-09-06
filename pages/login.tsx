@@ -12,11 +12,7 @@ interface formValues {
 const Login: NextPage = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
   const onSubmit = (values: formValues) => {
-    console.log(values);
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+    //apollo logic here
   };
 
   const validation = yup.object().shape({
@@ -163,11 +159,3 @@ const Login: NextPage = () => {
 };
 
 export default Login;
-
-{
-  /*
-
-
-
-*/
-}
