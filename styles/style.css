@@ -1,7 +1,12 @@
+html,
+body {
+  height: 100%;
+}
+
 .iamge-phone {
-  -webkit-align-self: center;
+  /* -webkit-align-self: center;
   -ms-flex-item-align: center;
-  align-self: center;
+  align-self: center; */
   background-position: -46px 0;
   background-size: 468.32px 634.15px;
   -webkit-flex-basis: 380.32px;
@@ -11,7 +16,6 @@
   background-image: url("/images/login/download.png");
   margin-right: 32px;
   margin-bottom: 12px;
-  height: 100%;
 }
 
 .hide-image {
@@ -37,4 +41,29 @@
   -webkit-transition: opacity 1.5s ease-in;
   transition: opacity 1.5s ease-in;
   z-index: 2;
+}
+
+.float-label {
+  transform: scale(0.714) translateY(-16px);
+}
+.text-color-black {
+  color: #262626;
+}
+
+.strok {
+  animation: 2s linear infinite RefreshedLoadingBarProgress,
+    0.5s ease-out LoadingBarEnter;
+  background: linear-gradient(
+    to right,
+    var(--gradient-yellow),
+    var(--gradient-orange),
+    var(--gradient-pink),
+    var(--gradient-lavender),
+    var(--gradient-purple),
+    var(--gradient-yellow)
+  );
+  background-size: 500%;
+  height: 3px;
+  transform-origin: left;
+  width: 100%;
 }

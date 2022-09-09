@@ -4,7 +4,7 @@
 
 @layer components {
   .icons {
-    @apply hidden h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
+    @apply h-6  cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
   }
   .rotate {
     @apply transform rotate-45;
@@ -27,6 +27,7 @@
   .p-input {
     padding: 9px 0 7px 8px;
   }
+
   .acive-btn {
     @apply bg-blue-500;
   }

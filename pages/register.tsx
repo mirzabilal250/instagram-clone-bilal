@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+import Head from "next/head";
 
 interface formValues {
   fullName: string;
@@ -34,13 +35,17 @@ const Register: NextPage = () => {
 
   return (
     <section className="bg-gray-50 h-screen">
+      <Head>
+        <title>Instagram</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <main className="flex flex-grow mb-4">
         <article className="flex justify-center  flex-row mx-auto mt-8">
-          <div className="iamge-phone hidden h-full md:inline-flex flex-shrink-0">
+          <div className="hidden iamge-phone md:inline-flex flex-shrink-0">
             <div className="mt-[27px] mr-0 mb-0 ml-[113px] relative">
               <img
                 alt=""
-                className="hide-image fide-in"
+                className="hide-image fide-in "
                 src="/images/login/4.png"
               />
             </div>
@@ -139,7 +144,7 @@ const Register: NextPage = () => {
                         </a>
                       </div>
                       <h3 className="text-center mt-3 text-sm text-blue-900">
-                        forget password
+                        <Link href="/reset-password"> forget password</Link>
                       </h3>
                     </Form>
                   )}
