@@ -28,6 +28,7 @@ const ResetPassword: NextPage = () => {
         <title>Instagram</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className=" flex flex-col">
         {/* header */}
         <div className="bg-white flex items-center sticky  h-[60px]  top-0 z-10 shadow-sm ">

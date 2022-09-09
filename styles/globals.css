@@ -24,6 +24,12 @@
   .login-input {
     @apply text-sm text-gray-400 mx-8  py-4 px-4 h-2 border border-gray-300 rounded-sm mb-2 bg-gray-50  focus:ring-gray-400 outline-none focus:border-none focus:border-gray-400;
   }
+  .strok {
+    @apply top-0 left-0  z-20 fixed w-full;
+  }
+  .bar {
+    @apply h-1 bg-gradient-to-r from-yellow-400 via-purple-500 to-pink-500;
+  }
   .p-input {
     padding: 9px 0 7px 8px;
   }

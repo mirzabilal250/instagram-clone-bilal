@@ -50,20 +50,11 @@ body {
   color: #262626;
 }
 
-.strok {
-  animation: 2s linear infinite RefreshedLoadingBarProgress,
-    0.5s ease-out LoadingBarEnter;
-  background: linear-gradient(
-    to right,
-    var(--gradient-yellow),
-    var(--gradient-orange),
-    var(--gradient-pink),
-    var(--gradient-lavender),
-    var(--gradient-purple),
-    var(--gradient-yellow)
-  );
+/* .strok {
+  animation: 2s linear infinite, 0.5s ease-out;
+
   background-size: 500%;
-  height: 3px;
+
   transform-origin: left;
   width: 100%;
-}
+} */
