@@ -1,16 +1,39 @@
 import type { AppProps } from "next/app";
-import NProgress from "nprogress";
-import Router from "next/router";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { ProgressBar } from "../components/Progress";
 import "../styles/globals.css";
 import "../styles/style.css";
-import "nprogress/nprogress.css";
-
-Router.events.on("routeChangeStart", () => NProgress.start());
-Router.events.on("routeChangeComplete", () => NProgress.done());
-Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const [isProgress, setIsProgress] = useState<boolean>(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const start = () => {
+      setIsProgress(true);
+    };
+    const stop = () => {
+      setIsProgress(false);
+    };
+
+    router.events.on("routeChangeStart", start);
+    router.events.on("routeChangeComplete", stop);
+    router.events.on("routeChangeError", stop);
+
+    return () => {
+      router.events.off("routeChangeStart", start);
+      router.events.off("routeChangeComplete", stop);
+      router.events.off("routeChangeError", stop);
+    };
+  }, [router]);
+
+  return (
+    <>
+      <ProgressBar isAnimating={isProgress} />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
