@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         iphone: "url('/images/login/download.png')",
       },
+      container: {
+        center: true,
+      },
     },
   },
   plugins: [

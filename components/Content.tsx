@@ -6,7 +6,7 @@ import Suggestion from "./Suggestion";
 
 export default function Content() {
   return (
-    <main className="grid grid-col-1 md:grid-col-2 md:max-w-3xl xl:grid-col-3 xl:max-w-6xl mx-auto">
+    <main className="container  grid grid-col-1 md:grid-col-2 md:max-w-3xl xl:grid-col-3 xl:max-w-6xl mx-auto">
       <section className="col-span-2">
         <Stories />
         <Posts />

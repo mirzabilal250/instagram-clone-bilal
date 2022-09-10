@@ -58,3 +58,15 @@ body {
   transform-origin: left;
   width: 100%;
 } */
+
+@media (max-width: 400px) {
+  .xs-hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .xxs-hidden {
+    display: none;
+  }
+}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 interface formValues {
   email: string;
@@ -12,8 +13,11 @@ interface formValues {
 
 const Login: NextPage = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
+
+  const router = useRouter();
   const onSubmit = (values: formValues) => {
     //apollo logic here
+    router.push("/home");
   };
 
   const validation = yup.object().shape({
