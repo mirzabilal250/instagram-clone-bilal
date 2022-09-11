@@ -26,7 +26,7 @@ export default function Header() {
           <div className="bag">4</div>
         </div>
       </div>
-      <div className="hidden top-0 sticky z-10 w-full h-14 md:flex flex-col justify-center items-center bg-white shadow-sm">
+      <div className="hidden top-0 fixed z-10 w-full h-14 md:flex flex-col justify-center items-center bg-white shadow-sm">
         <div className="flex items-center  justify-between w-full  px-5 h-full max-w-[975px]">
           <div className="relative cursor-pointer">
             <img src="/images/logo.png" alt="logo" className="h-[29px]" />

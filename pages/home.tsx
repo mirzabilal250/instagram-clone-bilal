@@ -5,14 +5,16 @@ import { BottomNav } from "../components";
 import Content from "../components/Content";
 import Header from "../components/Header";
 import { MoblileHeader } from "../components/MoblileHeader";
+import { MobleStory } from "../components";
+import Posts from "../components/Posts";
 
 const HomePage: NextPage = () => {
-  const onSubmithandler = (e: any) => {
-    e.preventDefault();
-  };
+  // const onSubmithandler = (e: any) => {
+  //   e.preventDefault();
+  // };
 
   return (
-    <div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
+    <div className="bg-gray-50 h-full">
       <Head>
         <title>Instagram</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,6 +22,7 @@ const HomePage: NextPage = () => {
       <Header />
       {/* <MoblileHeader /> */}
       <Content />
+
       <BottomNav />
     </div>
   );

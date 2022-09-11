@@ -13,8 +13,9 @@ export const BottomNav = () => {
       <div className="h-full flex flex-auto justify-center items-center">
         <RoundedPlus />
       </div>
-      <div className="h-full flex flex-auto justify-center items-center">
+      <div className="h-full flex flex-auto justify-center items-center relative">
         <Heart />
+        <div className="absolute bg-red-600 mx-auto h-1 w-1 bottom-[5px] rounded-sm -translate-x-[-0.5px]"></div>
       </div>
       <div className="h-full flex flex-auto justify-center items-center">
         <img
