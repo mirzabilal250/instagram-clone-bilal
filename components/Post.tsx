@@ -7,6 +7,7 @@ import {
   HeartIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/outline";
+import { HeartIcon as FillHeartIcon } from "@heroicons/react/solid";
 
 interface postProps {
   postId: string | number;
@@ -23,6 +24,11 @@ export default function Post({
   Imag,
   coption,
 }: postProps) {
+  const [liked, setLiked] = React.useState<boolean>(false);
+  const likePost = () => {
+    setLiked(!liked);
+  };
+
   return (
     <div className="bg-white my-7 border rounded-sm">
       <div className="flex items-center p-5">
@@ -37,7 +43,15 @@ export default function Post({
       <img src={Imag} alt={coption} className="w-full object-cover" />
       <div className="flex justify-between px-4 pt-4">
         <div className="flex space-x-4 ">
-          <HeartIcon className="btn" />
+          {liked ? (
+            <FillHeartIcon
+              className="btn text-red-500 transition ease-out"
+              onClick={likePost}
+            />
+          ) : (
+            <HeartIcon className="btn transition ease-in" onClick={likePost} />
+          )}
+
           <ChatIcon className="btn" />
           <PaperAirplaneIcon className="btn" />
         </div>

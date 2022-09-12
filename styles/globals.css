@@ -37,4 +37,7 @@
   .acive-btn {
     @apply bg-blue-500;
   }
+  .line-h-sm {
+    line-height: 18px;
+  }
 }

@@ -9,6 +9,13 @@ const posts = [
     Imag: "/images/users/raphael/1.jpg",
     coption: "hello from react instagram chellonges",
   },
+  {
+    id: 124,
+    username: "hamza",
+    userImag: "/images/avatars/dali.jpg",
+    Imag: "/images/users/raphael/2.jpg",
+    coption: "hello from react instagram chellonges",
+  },
 ];
 
 export default function Posts() {

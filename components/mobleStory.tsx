@@ -4,7 +4,8 @@ export const MobleStory = () => {
     <div className="bg-white box-border overflow-y-hidden relative py-[10px] mt-12 md:mt-8 block scroll-smooth scrollbar-thin">
       <div className="flex space-x-1">
         <div className="box-border items-center relative self-center cursor-pointer  px-2 flex flex-col">
-          <span className="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 w-[66px] h-[66px] p-[2px] flex items-center  relative rounded-full">
+          <span className="insta-gr w-[66px] h-[66px] p-[2px] flex items-center  relative rounded-full">
+            {/* bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 */}
             <img
               src="/images/avatars/default.png"
               className="rounded-full"

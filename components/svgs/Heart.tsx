@@ -2,7 +2,7 @@ export const Heart = () => {
   return (
     <svg
       aria-label="Fil d’activité"
-      className="relative block h-6 "
+      className="relative block h-6"
       color="#262626"
       fill="#262626"
       height="24"

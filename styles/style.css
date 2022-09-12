@@ -58,6 +58,13 @@ body {
   transform-origin: left;
   width: 100%;
 } */
+.insta-gr {
+  background: linear-gradient(
+    145deg,
+    rgba(196, 0, 146, 1) 0%,
+    rgba(228, 0, 49, 1) 100%
+  );
+}
 
 @media (max-width: 400px) {
   .xs-hidden {
