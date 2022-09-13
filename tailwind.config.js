@@ -13,9 +13,9 @@ module.exports = {
       "2xl": "1536px", //1536px
     },
     extend: {
-      backgroundImage: {
-        iphone: "url('/images/login/download.png')",
-      },
+      // backgroundImage: {
+      //   iphone: "url('/images/login/download.png')",
+      // },
       container: {
         center: true,
       },

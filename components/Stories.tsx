@@ -1,31 +1,54 @@
 import React from "react";
-import Story from "./Story";
+import { Story } from "./";
 
 type Iusers = {
   username: string;
   image: string;
 }[];
 
-export default function Stories() {
-  const [user, setUsers] = React.useState<Iusers>([]);
+const users: Iusers = [
+  {
+    username: "dali__ma",
+    image: "/images/avatars/dali.jpg",
+  },
+  {
+    username: "raphael_v",
+    image: "/images/avatars/raphael.jpg",
+  },
+  {
+    username: "steve_micro",
+    image: "/images/avatars/steve.jpg",
+  },
+  {
+    username: "orwell_reactjs",
+    image: "/images/avatars/orwell.jpg",
+  },
+  {
+    username: "dali__ma",
+    image: "/images/avatars/dali.jpg",
+  },
+  {
+    username: "raphael_v",
+    image: "/images/avatars/raphael.jpg",
+  },
+  {
+    username: "steve_micro",
+    image: "/images/avatars/steve.jpg",
+  },
+  {
+    username: "orwell_reactjs",
+    image: "/images/avatars/orwell.jpg",
+  },
+];
 
-  React.useEffect(() => {
-    const getUsers = async () => {
-      const { users } = await (
-        await fetch("https://dummyjson.com/users")
-      ).json();
-
-      setUsers(users);
-    };
-
-    getUsers();
-  }, []);
-
+export const Stories: React.FC = () => {
   return (
-    <div className="flex space-x-2 p-6 mt-8 bg-white border rounded-sm border-gray-200 overflow-x-scroll scrollbar-thin scrollbar-thumb-white">
-      {user?.map((u, i) => (
-        <Story key={i} avatar={u.image} username={u.username} />
-      ))}
+    <div className="bg-white box-border overflow-y-hidden relative py-[10px] mt-12 md:mt-8 block scroll-smooth scrollbar-thin">
+      <div className="flex space-x-1">
+        {users?.map((u, i) => (
+          <Story key={i} me={i === 0} avatar={u.image} username={u.username} />
+        ))}
+      </div>
     </div>
   );
-}
+};

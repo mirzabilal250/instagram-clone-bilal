@@ -1,4 +1,4 @@
-export default function Suggestion() {
+export const Suggestion = () => {
   return (
     <div className=" flex flex-col ">
       <div className="flex flex-row justify-between items-center pl-4 py-1 ">
@@ -66,4 +66,4 @@ export default function Suggestion() {
       </div>
     </div>
   );
-}
+};

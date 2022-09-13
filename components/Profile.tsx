@@ -1,4 +1,6 @@
-export default function MiniProfile() {
+import Link from "next/link";
+
+export const MiniProfile = () => {
   return (
     <div className="flex flex-row items-center justify-between mb-[10px]">
       <img
@@ -16,8 +18,8 @@ export default function MiniProfile() {
       </div>
 
       <button className="text-blue-500 hover:text-blue-400 transition text-sm font-sans font-medium line-h-sm">
-        Switch
+        <Link href="/"> Switch</Link>
       </button>
     </div>
   );
-}
+};

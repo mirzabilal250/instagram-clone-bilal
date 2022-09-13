@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "./Post";
+import { Post } from "./";
 
 const posts = [
   {
@@ -18,7 +18,7 @@ const posts = [
   },
 ];
 
-export default function Posts() {
+export const Posts: React.FC = () => {
   return (
     <div>
       {posts.map((post) => (
@@ -33,4 +33,4 @@ export default function Posts() {
       ))}
     </div>
   );
-}
+};

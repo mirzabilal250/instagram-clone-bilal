@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { ProgressBar } from "../components/Progress";
+import { ProgressBar } from "../components";
 import "../styles/globals.css";
 import "../styles/style.css";
 

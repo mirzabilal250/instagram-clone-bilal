@@ -8,7 +8,7 @@ import {
 import { HomeIcon } from "@heroicons/react/solid";
 import { CameraIcon } from "./";
 
-export default function Header() {
+export const Header: React.FC = () => {
   return (
     <nav>
       <div className="bg-white shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
@@ -59,4 +59,4 @@ export default function Header() {
       </div>
     </nav>
   );
-}
+};

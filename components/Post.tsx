@@ -17,13 +17,13 @@ interface postProps {
   coption: string;
 }
 
-export default function Post({
+export const Post = ({
   postId,
   username,
   userImag,
   Imag,
   coption,
-}: postProps) {
+}: postProps) => {
   const [liked, setLiked] = React.useState<boolean>(false);
   const likePost = () => {
     setLiked(!liked);
@@ -74,10 +74,13 @@ export default function Post({
           className="border-none flex-1 focus:ring-0 outline-none"
         />
 
-        <button type="submit" className="font-somiblod text-blue-400">
+        <button
+          type="submit"
+          className="font-somiblod text-blue-500  hover:text-blue-400 transition text-sm font-sans font-medium line-h-sm"
+        >
           Post
         </button>
       </form>
     </div>
   );
-}
+};
