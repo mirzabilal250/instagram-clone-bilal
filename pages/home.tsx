@@ -4,7 +4,7 @@ import { Header, HomeContent, Navigation } from "../components";
 
 const HomePage: NextPage = () => {
   return (
-    <div className="bg-gray-50 h-full">
+    <div className="bg-gray-50 h-full dark:bg-gray-900 dark:text-white">
       <Head>
         <title>Instagram</title>
         <link rel="icon" href="/favicon.ico" />

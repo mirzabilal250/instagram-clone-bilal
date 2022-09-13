@@ -5,7 +5,7 @@ export const Suggestion = () => {
         <h2 className="font-bold text-sm text-gray-400">
           Suggestions pour vous
         </h2>
-        <button className="text-xs font-semibold line-h-sm text-black ring-0">
+        <button className="text-xs font-semibold line-h-sm text-black dark:text-white ring-0">
           See all
         </button>
       </div>
@@ -18,7 +18,7 @@ export const Suggestion = () => {
             className="rounded-full w-8 h-8 mr-3"
           />
           <div className="truncate flex-auto">
-            <h2 className="font-bold text-sm text-gray-800">
+            <h2 className="font-bold text-sm text-gray-800 dark:text-gray-100">
               nouhaila.nouhaila18
             </h2>
             <p className="font-normal text-xs text-gray-400">Suggestions</p>

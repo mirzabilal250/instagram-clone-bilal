@@ -4,13 +4,13 @@ import Link from "next/link";
 
 export const Navigation = () => {
   return (
-    <div className="flex flex-row bg-white shadow-sm h-11 bottom-0 left-0 fixed  w-full items-center md:hidden">
+    <div className="flex flex-row bg-white dark:bg-gray-900 shadow-sm h-11 bottom-0 left-0 fixed  w-full items-center md:hidden">
       <div className="h-full flex flex-auto justify-center items-center cursor-pointer">
         <HomeIcon />
       </div>
       <div className="h-full flex flex-auto justify-center items-center">
         <Link href="/search">
-          <SearchIcon className="h-6 " />
+          <SearchIcon className="h-6 icons" />
         </Link>
       </div>
       <div className="h-full flex flex-auto justify-center items-center">

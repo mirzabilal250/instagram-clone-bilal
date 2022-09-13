@@ -43,7 +43,7 @@ const users: Iusers = [
 
 export const Stories: React.FC = () => {
   return (
-    <div className="bg-white box-border overflow-y-hidden relative py-[10px] mt-12 md:mt-8 block scroll-smooth scrollbar-thin">
+    <div className="bg-white dark:bg-gray-900 dark:text-white box-border overflow-y-hidden relative py-[10px] mt-12 md:mt-8 block scroll-smooth scrollbar-thin">
       <div className="flex space-x-1">
         {users?.map((u, i) => (
           <Story key={i} me={i === 0} avatar={u.image} username={u.username} />

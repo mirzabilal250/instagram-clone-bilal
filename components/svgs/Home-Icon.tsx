@@ -2,7 +2,7 @@ export const HomeIcon = () => {
   return (
     <svg
       aria-label="home"
-      className="h-6"
+      className="h-6 "
       color="#262626"
       fill="#262626"
       height="24"

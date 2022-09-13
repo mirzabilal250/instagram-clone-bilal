@@ -9,10 +9,10 @@ export const MiniProfile = () => {
         className="rounded-full w-14 h-14"
       />
       <div className="flex flex-col justify-center ml-3 flex-auto">
-        <div className="text-sm font-sans font-semibold line-h-sm text-black ">
+        <div className="text-sm font-sans font-semibold line-h-sm  text-black dark:text-white">
           hz__egalehamza
         </div>
-        <p className="text-sm font-sans font-normal text-gray-400 line-h-sm">
+        <p className="text-sm font-sans font-normal text-gray-400  dark:text-gray-300 line-h-sm">
           Hamza El ouham
         </p>
       </div>

@@ -50,6 +50,10 @@ body {
   color: #262626;
 }
 
+/* .bg-gray-900 {
+  background-color: rgb(32, 33, 36);
+} */
+
 /* .strok {
   animation: 2s linear infinite, 0.5s ease-out;
 
@@ -64,16 +68,4 @@ body {
     rgba(196, 0, 146, 1) 0%,
     rgba(228, 0, 49, 1) 100%
   );
-}
-
-@media (max-width: 400px) {
-  .xs-hidden {
-    display: none;
-  }
-}
-
-@media (max-width: 390px) {
-  .xxs-hidden {
-    display: none;
-  }
 }

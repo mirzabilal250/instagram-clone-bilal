@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: true,
   theme: {
     screens: {
       sm: "540px", //640px
@@ -13,9 +14,6 @@ module.exports = {
       "2xl": "1536px", //1536px
     },
     extend: {
-      // backgroundImage: {
-      //   iphone: "url('/images/login/download.png')",
-      // },
       container: {
         center: true,
       },

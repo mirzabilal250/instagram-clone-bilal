@@ -6,12 +6,12 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
-import { CameraIcon } from "./";
+import { CameraIcon, RoundedPlus } from "./";
 
 export const Header: React.FC = () => {
   return (
     <nav>
-      <div className="bg-white shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
+      <div className="bg-white dark:bg-gray-900 shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
         <div className="flex items-center basis-8 flex-row">
           <CameraIcon />
         </div>
@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
           <div className="bag">4</div>
         </div>
       </div>
-      <div className="hidden top-0 fixed z-10 w-full h-14 md:flex flex-col justify-center items-center bg-white shadow-sm">
+      <div className="hidden top-0 fixed z-10 w-full h-14 md:flex flex-col justify-center items-center bg-white dark:bg-gray-900 shadow-sm">
         <div className="flex items-center  justify-between w-full  px-5 h-full max-w-[975px]">
           <div className="relative cursor-pointer">
             <img src="/images/logo.png" alt="logo" className="h-[29px]" />
@@ -40,15 +40,16 @@ export const Header: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-end space-x-4 ">
-            <HomeIcon className="icons xxs-hidden" />
+            <HomeIcon className="icons " />
 
-            <div className="relative icons xxs-hidden">
+            <div className="relative icons ">
               <PaperAirplaneIcon className="icons rotate-45 " />
               <div className="bag">4</div>
             </div>
-            <PlusCircleIcon className="icons xs-hidden" />
-            <UserGroupIcon className="icons xs-hidden " />
-            <HeartIcon className="icons xxs-hidden" />
+            {/* <PlusCircleIcon className="icons xs-hidden" /> */}
+            <RoundedPlus />
+            <UserGroupIcon className="icons " />
+            <HeartIcon className="icons " />
             <img
               src="/images/avatars/default.png"
               alt="avatar"
