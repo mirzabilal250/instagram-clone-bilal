@@ -4,7 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: true,
+  darkMode: "class",
   theme: {
     screens: {
       sm: "540px", //640px
@@ -16,6 +16,9 @@ module.exports = {
     extend: {
       container: {
         center: true,
+      },
+      colors: {
+        dark: "rgba(18 18 18)",
       },
     },
   },

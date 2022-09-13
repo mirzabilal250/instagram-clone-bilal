@@ -11,7 +11,7 @@ import { CameraIcon, RoundedPlus } from "./";
 export const Header: React.FC = () => {
   return (
     <nav>
-      <div className="bg-white dark:bg-gray-900 shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
+      <div className="bg-white dark:bg-dark shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
         <div className="flex items-center basis-8 flex-row">
           <CameraIcon />
         </div>
@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
           <div className="bag">4</div>
         </div>
       </div>
-      <div className="hidden top-0 fixed z-10 w-full h-14 md:flex flex-col justify-center items-center bg-white dark:bg-gray-900 shadow-sm">
+      <div className="hidden top-0 fixed z-10 w-full h-14 md:flex flex-col justify-center items-center bg-white dark:bg-dark shadow-sm">
         <div className="flex items-center  justify-between w-full  px-5 h-full max-w-[975px]">
           <div className="relative cursor-pointer">
             <img src="/images/logo.png" alt="logo" className="h-[29px]" />

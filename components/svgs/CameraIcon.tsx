@@ -2,9 +2,9 @@ export const CameraIcon = () => {
   return (
     <svg
       aria-label="Nouvelle story"
-      className="h-6"
-      color="#262626"
-      fill="#262626"
+      className="h-6 text-black dark:text-white"
+      // color="#262626"
+      // fill="#262626"
       height="24"
       role="img"
       viewBox="0 0 24 24"

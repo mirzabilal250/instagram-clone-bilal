@@ -30,7 +30,7 @@ export const Post = ({
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 dark:text-white my-7 border dark:border-none rounded-sm">
+    <div className="bg-white dark:bg-dark dark:text-white my-7 border dark:border-none rounded-sm">
       <div className="flex items-center p-5">
         <img
           src={userImag}
@@ -71,12 +71,12 @@ export const Post = ({
         <input
           type="text"
           placeholder="add a comment..."
-          className="dark:bg-gray-900 dark:text-white border-none flex-1 focus:ring-0 outline-none"
+          className="dark:bg-dark dark:text-white border-none flex-1 focus:ring-0 outline-none"
         />
 
         <button
           type="submit"
-          className="font-somiblod px-1 h-12 w-12 text-blue-500  hover:text-blue-400 transition text-sm font-sans font-medium line-h-sm"
+          className="font-somiblod px-1 h-12 w-12 text-blue-500 dark:text-white  hover:text-blue-400 transition text-sm font-sans font-medium line-h-sm"
         >
           Post
         </button>

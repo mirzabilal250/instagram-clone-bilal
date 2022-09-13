@@ -2,9 +2,9 @@ export const RoundedPlus = () => {
   return (
     <svg
       aria-label="Nouvelle publication"
-      className="icons"
-      color="#262626"
-      fill="#262626"
+      className="icons text-black dark:text-white"
+      // color="#262626"
+      // fill="#262626"
       height="20"
       role="img"
       viewBox="0 0 24 24"

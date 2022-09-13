@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
-          {/* <link rel="manifest" href="/manifest.json" /> */}
+          <link rel="manifest" href="/manifest.json" />
           <meta
             name="description"
             content="instagram  clone made with nextjs and tailwindcss"
