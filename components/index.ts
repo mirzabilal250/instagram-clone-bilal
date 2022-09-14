@@ -13,3 +13,4 @@ export * from "./Suggestion";
 export * from "./Progress";
 export * from "./Profile";
 export * from "./Moblie-Nav";
+export * from "./LoadingComponent";
