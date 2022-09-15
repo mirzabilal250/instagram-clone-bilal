@@ -1,3 +1,4 @@
+import React from "react";
 import {
   HeartIcon,
   PaperAirplaneIcon,
@@ -6,9 +7,22 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
-import { CameraIcon, RoundedPlus } from "./";
+import { CameraIcon, RoundedPlus, ProfileModel } from "./";
 
 export const Header: React.FC = () => {
+  const [toggle, setToggole] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const closeModel = () => {
+      setToggole(false);
+    };
+    document.addEventListener("mousedown", closeModel);
+
+    return () => {
+      document.removeEventListener("mousedown", closeModel);
+    };
+  }, []);
+
   return (
     <nav>
       <div className="bg-white dark:bg-dark shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
@@ -41,7 +55,6 @@ export const Header: React.FC = () => {
           </div>
           <div className="flex items-center justify-end space-x-4 ">
             <HomeIcon className="icons " />
-
             <div className="relative icons ">
               <PaperAirplaneIcon className="icons rotate-45 " />
               <div className="bag">4</div>
@@ -50,11 +63,18 @@ export const Header: React.FC = () => {
             <RoundedPlus />
             <UserGroupIcon className="icons " />
             <HeartIcon className="icons " />
-            <img
-              src="/images/avatars/default.png"
-              alt="avatar"
-              className="h-6 w-6 rounded-full cursor-pointer"
-            />
+            <div className="relative  cursor-pointer">
+              <button
+                className="hidden"
+                onClick={() => setToggole(true)}
+              ></button>
+              <img
+                src="/images/avatars/default.png"
+                alt="avatar"
+                className="h-6 w-6 rounded-full cursor-pointer"
+              />
+              {toggle && <ProfileModel />}
+            </div>
           </div>
         </div>
       </div>

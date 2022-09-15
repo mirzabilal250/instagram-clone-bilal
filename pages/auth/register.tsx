@@ -144,7 +144,7 @@ const Register: NextPage = () => {
                         </a>
                       </div>
                       <h3 className="text-center mt-3 text-sm text-blue-900">
-                        <Link href="/reset-password"> forget password</Link>
+                        <Link href="/auth/reset-password">forget password</Link>
                       </h3>
                     </Form>
                   )}
@@ -155,7 +155,7 @@ const Register: NextPage = () => {
               <div>
                 <p className="m-4 text-sm text-center">
                   Vous avez un compte ?
-                  <Link href="/">
+                  <Link href="/auth/">
                     <span className="text-blue-500 font-semibold cursor-pointer">
                       Connectez-vous
                     </span>

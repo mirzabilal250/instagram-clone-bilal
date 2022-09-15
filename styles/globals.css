@@ -6,6 +6,9 @@
   .icons {
     @apply h-6 w-6  cursor-pointer md:hover:scale-125 transition-all duration-150 ease-out;
   }
+  .ex-img {
+    @apply object-cover h-full w-full;
+  }
   .rotate {
     @apply transform rotate-45;
   }

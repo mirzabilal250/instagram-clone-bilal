@@ -100,10 +100,10 @@ const ResetPassword: NextPage = () => {
               <div className="flex-grow flex-shrink h-[1px] relative bg-gray-300"></div>
             </div>
             <div className="text-center font-medium text-sm text-color-black mx-11 mb-4 ">
-              <Link href="/register">Créer un compte</Link>
+              <Link href="/auth/register">Créer un compte</Link>
             </div>
             <div className="bg-gray-50 mt-16 h-11 border border-gray-300  font-medium text-sm text-center  text-color-black flex items-center justify-center">
-              <Link href="/"> Back to login</Link>
+              <Link href="/auth/"> Back to login</Link>
             </div>
           </div>
         </div>

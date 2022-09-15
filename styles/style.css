@@ -17,7 +17,9 @@ body {
   margin-right: 32px;
   margin-bottom: 12px;
 }
-
+.line-sm {
+  line-height: 18px;
+}
 .hide-image {
   height: 538.84px;
   left: 0;
@@ -50,6 +52,21 @@ body {
   color: #262626;
 }
 
+.show-model {
+  animation: showModel 0.1s ease-out;
+}
+
+@keyframes showModel {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* .bg-gray-900 {
   background-color: rgb(32, 33, 36);
 } */
@@ -68,4 +85,14 @@ body {
     rgba(196, 0, 146, 1) 0%,
     rgba(228, 0, 49, 1) 100%
   );
+}
+
+.drop-fr {
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.0975));
+}
+
+.filter-shd {
+  filter: drop-shadow(rgba(0, 0, 0, 0.42) 0px 0px 0.75px)
+    drop-shadow(rgba(0, 0, 0, 0.18) 0px 1px 0.5px)
+    drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 3px);
 }
