@@ -67,6 +67,31 @@ body {
   }
 }
 
+.tooltip {
+  position: absolute;
+
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #fff;
+  filter: drop-shadow(rgba(0, 0, 0, 0.42) 0px 0px 0.75px)
+    drop-shadow(rgba(0, 0, 0, 0.18) 0px 1px 0.5px)
+    drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 3px);
+}
+
+.no-outline-on-focus:focus {
+  outline: none;
+}
+
 /* .bg-gray-900 {
   background-color: rgb(32, 33, 36);
 } */
