@@ -21,5 +21,6 @@ export * from "./Moblie-Nav";
 export * from "./activity";
 export * from "./LoadingComponent";
 export * from "./model/profile-model";
+export * from "./model/Model";
 export * from "./Grid/grid-normal";
 export * from "./Grid/grid-reverse";

@@ -19,6 +19,7 @@ module.exports = {
       },
       colors: {
         dark: "rgba(18 18 18)",
+        primary: "#0095f6",
       },
     },
   },
