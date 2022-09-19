@@ -40,7 +40,11 @@ export const Post = ({
         <p className="flex-1 font-bold ">{username}</p>
         <DotsHorizontalIcon className="h-5 cursor-pointer" />
       </div>
-      <img src={Imag} alt={coption} className="w-full object-cover" />
+      <img
+        src={Imag}
+        alt={coption}
+        className="w-full h-[400px] md:h-[450px] object-cover"
+      />
       <div className="flex justify-between px-4 pt-4">
         <div className="flex space-x-4 ">
           {liked ? (

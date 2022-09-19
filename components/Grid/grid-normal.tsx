@@ -2,7 +2,7 @@ import { ReelsIcon } from "../";
 
 export const NormalGrid = () => {
   return (
-    <div className="grid grid-cols-3 gap-[2px] md:gap-6">
+    <div className="grid grid-cols-3 gap-[2px] md:gap-6 ">
       <div className="row-span-1">
         <div>
           <img src="/images/avatars/dali.jpg" className="ex-img " alt="" />

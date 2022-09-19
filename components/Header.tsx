@@ -3,14 +3,23 @@ import {
   HeartIcon,
   PaperAirplaneIcon,
   SearchIcon,
-  UserGroupIcon,
+  HomeIcon,
 } from "@heroicons/react/outline";
-import { HomeIcon } from "@heroicons/react/solid";
-import { CameraIcon, RoundedPlus, ProfileModel, Model } from "./";
+import { HomeIcon as HomeIconActive } from "@heroicons/react/solid";
+import {
+  CameraIcon,
+  RoundedPlus,
+  ProfileModel,
+  Model,
+  ExploreIcon,
+  ActiveExploreIcon,
+} from "./";
 import { Menu } from "@headlessui/react";
+import { useRouter } from "next/router";
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const router = useRouter();
 
   const closeModal = () => {
     setIsOpen(false);
@@ -23,7 +32,7 @@ export const Header: React.FC = () => {
     <>
       <Model closeModal={closeModal} isOpen={isOpen} />
       <nav>
-        <div className="bg-white dark:bg-dark shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
+        <div className=" bg-white dark:bg-dark shadow-sm top-0 left-0 fixed z-10 flex items-center flex-row h-11 w-full justify-between px-4 md:hidden">
           <div className="flex items-center basis-8 flex-row">
             <CameraIcon />
           </div>
@@ -52,7 +61,12 @@ export const Header: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center justify-end space-x-4 ">
-              <HomeIcon className="icons " />
+              {router.pathname === "/" ? (
+                <HomeIconActive className="icons " />
+              ) : (
+                <HomeIcon className="icons " onClick={() => router.push("/")} />
+              )}
+
               <div className="relative icons ">
                 <PaperAirplaneIcon className="icons rotate-45 " />
                 <div className="bag">4</div>
@@ -61,7 +75,13 @@ export const Header: React.FC = () => {
               <button onClick={openModal}>
                 <RoundedPlus />
               </button>
-              <UserGroupIcon className="icons" />
+
+              {router.pathname === "/explore" ? (
+                <ActiveExploreIcon className="icons" />
+              ) : (
+                <ExploreIcon className="icons" />
+              )}
+
               <HeartIcon className="icons " />
               <Menu as="div" className="relative inline-block">
                 <Menu.Button className="cursor-pointerfocus:outline-none">

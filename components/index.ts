@@ -5,6 +5,7 @@ export * from "./svgs/Reels-icon";
 export * from "./svgs/Change-icon";
 export * from "./svgs/RoundedPlus";
 export * from "./svgs/Home-Icon";
+export * from "./svgs/ExploreIcon";
 export * from "./svgs/CameraIcon";
 export * from "./svgs/LeftArrow";
 export * from "./svgs/RightArrow";
